@@ -73,7 +73,29 @@ foods.forEach((f,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td cl
 const qty=Array(foods.length).fill(0);
 function changeQty(i,delta){qty[i]=Math.max(0,Math.min(10,qty[i]+delta));document.getElementById('q'+i).textContent=qty[i];updateTotals();}
 function updateTotals(){let grand=0;foods.forEach((f,i)=>{const total=qty[i]*f[1];document.getElementById('a'+i).textContent=total;grand+=total;});document.getElementById('grandTotal').textContent=grand;document.getElementById('paymentAmount').value=grand;}
-function placeOrder(){const flat=document.getElementById('flat').value.trim(),name=document.getElementById('name').value.trim(),mobile=document.getElementById('mobile').value.trim();if(!flat||!name||!/^[0-9]{10}$/.test(mobile)){alert('Please enter Flat Number, Name and a valid 10 digit Mobile Number.');return;}const grand=Number(document.getElementById('grandTotal').textContent)||0;if(grand<=0){alert('Please select at least one food item.');return;}let n=parseInt(localStorage.getItem('gkhOrderCounter')||'0',10)+1;localStorage.setItem('gkhOrderCounter',n);const orderNo='GKH-'+String(n).padStart(3,'0');document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+name+'!</div><div class="modal-total">Total: ₹'+grand+'</div><div>Please keep this order number for reference.</div>';document.getElementById('confirmModal').classList.add('show');}
+const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycby42Bp-TdmlnVCA42vt_LPrUfNLv0Lrbjn2c0C1KxjDExiWQVK44bCk6FlYPGUdrnn4gg/exec';
+let orderSubmitting=false;
+function placeOrder(){
+  if(orderSubmitting)return;
+  const flat=document.getElementById('flat').value.trim(),name=document.getElementById('name').value.trim(),mobile=document.getElementById('mobile').value.trim();
+  if(!flat||!name||!/^[0-9]{10}$/.test(mobile)){alert('Please enter Flat Number, Name and a valid 10 digit Mobile Number.');return;}
+  const grand=Number(document.getElementById('grandTotal').textContent)||0;
+  if(grand<=0){alert('Please select at least one food item.');return;}
+  const items=[];
+  foods.forEach((f,i)=>{if(qty[i]>0)items.push({name:f[0],quantity:qty[i],price:f[1],total:qty[i]*f[1]});});
+  const data={flatNumber:flat,name:name,mobile:mobile,grandTotal:grand,items:items};
+  orderSubmitting=true;
+  const btn=document.querySelector('.submit');btn.disabled=true;btn.textContent='Submitting Order...';
+  const callbackName='gkhCallback_'+Date.now();
+  const script=document.createElement('script');
+  let finished=false;
+  const cleanup=()=>{finished=true;orderSubmitting=false;btn.disabled=false;btn.innerHTML='✓ &nbsp; Place Order';if(script.parentNode)script.parentNode.removeChild(script);try{delete window[callbackName];}catch(e){window[callbackName]=undefined;}};
+  const timer=setTimeout(()=>{if(finished)return;cleanup();alert('Unable to confirm the order right now. Please check your internet connection and try again.');},15000);
+  window[callbackName]=function(result){if(finished)return;clearTimeout(timer);cleanup();if(!result||!result.success){alert('Order could not be saved. Please try again.');return;}const orderNo=result.orderNumber;document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+name+'!</div><div class="modal-total">Total: ₹'+grand+'</div><div>Please keep this order number for reference.</div>';document.getElementById('confirmModal').classList.add('show');};
+  script.onerror=function(){clearTimeout(timer);if(finished)return;cleanup();alert('Unable to connect to the order system. Please try again.');};
+  script.src=GOOGLE_SCRIPT_URL+'?callback='+encodeURIComponent(callbackName)+'&data='+encodeURIComponent(JSON.stringify(data));
+  document.body.appendChild(script);
+}
 function closeConfirmModal(){document.getElementById('confirmModal').classList.remove('show');}
 document.getElementById('confirmModal').addEventListener('click',function(e){if(e.target===this)closeConfirmModal();});
 updateTotals();
