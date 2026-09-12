@@ -19,9 +19,10 @@ body{margin:0;background:#fff;color:#14251a;font-family:Arial,Helvetica,sans-ser
 .qty-control{display:flex;align-items:center;justify-content:center;gap:7px}.qty-btn{width:30px;height:30px;border:0;border-radius:50%;background:#0b6b36;color:#fff;font-size:21px;line-height:30px;font-weight:700;cursor:pointer;padding:0}.qty-value{width:42px;height:32px;border:1px solid #d6cdbf;border-radius:6px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700}.qty-btn:active{transform:scale(.95)}
 tfoot td{height:48px;background:#eff8e7;font-weight:800}.grand-label{text-align:right;font-size:17px;padding-right:18px!important}.grand-total{font-size:19px}
 .payment-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.upi-box{border:1px solid #d6e5f5;border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:25px;min-height:90px}.upi-logo{width:140px;height:70px;object-fit:contain}.upi-text{font-size:17px;line-height:1.55}.payto{font-weight:700;color:#17233a}.person{font-weight:800;color:var(--red);display:inline-block;width:80px}.number{font-weight:800;color:#075522}.amount-display{background:#eef0f3;color:#65707c;cursor:not-allowed}
+.flash-box{margin:12px 14px 0;padding:11px 14px;text-align:center;background:linear-gradient(90deg,#fff3b0,#fff8dc,#fff3b0);border:2px solid #f0b429;border-radius:10px;color:#8b1025;font-size:17px;font-weight:900;box-shadow:0 3px 10px rgba(139,16,37,.10);animation:flashPulse 1.8s ease-in-out infinite}@keyframes flashPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
 .submit{width:100%;margin:14px 0 0;border:0;border-radius:8px;background:#11964d;color:#fff;font-size:23px;font-weight:800;padding:13px;cursor:pointer}.success{display:none;margin-top:14px;padding:18px;text-align:center;background:#effaf1;border:1px solid #b8dfbf;border-radius:10px}.order-no{font-size:27px;font-weight:900;color:var(--red);margin:7px}.footer{text-align:center;color:#40506a;padding:12px 0 0;font-size:15px}.whatsapp-note{margin-top:12px;padding:10px 12px;text-align:center;font-size:14px;font-weight:700;color:#173d25;background:#f2fbf3;border:1px solid #cfe8d2;border-radius:8px}.whatsapp-note a{color:#08783b;text-decoration:underline}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:9999;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{width:min(520px,100%);background:#fff;border-radius:16px;padding:26px 24px 22px;text-align:center;box-shadow:0 18px 60px rgba(0,0,0,.25);border-top:6px solid #11964d}.modal-icon{width:48px;height:48px;margin:0 auto 10px;border-radius:50%;background:#11964d;color:#fff;font-size:30px;line-height:48px;font-weight:800}.modal-title{font-size:22px;font-weight:800;color:#123d22;margin-bottom:12px}.modal-message{font-size:17px;line-height:1.5;color:#26342b}.modal-order-details{margin:10px 0 14px;padding:12px;border-radius:10px;background:#effaf1;border:1px solid #c9e6ce;color:#173d25;line-height:1.6}.modal-order-no{font-size:27px;font-weight:900;color:var(--red);margin:3px 0}.modal-total{font-size:19px;font-weight:900;color:#0b5428}.modal-close{margin-top:20px;border:0;border-radius:8px;background:#11964d;color:#fff;font-size:16px;font-weight:800;padding:10px 28px;cursor:pointer}
 @media(max-width:850px){.page{padding:0 8px 14px}.hero{grid-template-columns:160px 1fr;min-height:145px;padding:8px}.logo{width:150px;height:110px}.hero-title{font-size:36px}.hero-sub{font-size:27px}.hero-at{font-size:18px}.pill{font-size:12px;padding:6px 9px}.form-grid,.payment-grid{grid-template-columns:1fr;gap:14px}.section-title{font-size:21px}.table-wrap{overflow:hidden}th{font-size:12px;padding:8px 3px}td{font-size:13px;padding:3px 3px}.no{width:9%}.delicacy{width:37%}.discount{width:22%}.quantity{width:20%}.total{width:12%}.qty-control{gap:4px}.qty-btn{width:27px;height:27px;line-height:27px;font-size:19px}.qty-value{width:35px;height:29px}.grand-label{font-size:15px;padding-right:8px!important}}
-@media(max-width:560px){.modal-order-no{font-size:23px}.modal-total{font-size:17px}.page{padding:0 5px 14px}.hero{grid-template-columns:1fr;min-height:auto;padding:8px 6px 12px}.logo{width:150px;height:88px}.hero-title{font-size:31px}.hero-sub{font-size:23px}.hero-at{font-size:17px}.details{gap:5px}.pill{font-size:11px;padding:6px 8px}.card{margin-top:10px}.section-title{font-size:20px;padding:10px 12px}.form-body,.payment-body{padding:11px 10px}.table-wrap{overflow:hidden}table{font-size:12px}th{font-size:11px;line-height:1.15;padding:7px 2px}td{height:43px;font-size:12px;padding:3px 2px}.no{width:9%}.delicacy{width:35%}.discount{width:23%}.quantity{width:21%}.total{width:12%}.no span{width:24px;height:24px;font-size:12px}.food-name{white-space:normal;text-align:left;padding-left:5px;font-weight:700}.discount-price{font-size:12px}.qty-control{gap:2px}.qty-btn{width:25px;height:25px;line-height:25px;font-size:18px}.qty-value{width:31px;height:27px;font-size:14px}.amount{font-size:12px}.grand-label{font-size:13px;padding-right:5px!important}.grand-total{font-size:16px}.upi-box{flex-direction:column;gap:4px;text-align:center;padding:10px}.upi-logo{width:125px;height:55px}.upi-text{font-size:15px}.submit{font-size:20px;padding:12px}.footer{font-size:14px}.whatsapp-note{font-size:12px;line-height:1.45}.modal-message{font-size:15px}.modal-card{padding:22px 16px 18px}}
+@media(max-width:560px){.modal-order-no{font-size:23px}.modal-total{font-size:17px}.page{padding:0 5px 14px}.hero{grid-template-columns:1fr;min-height:auto;padding:8px 6px 12px}.logo{width:150px;height:88px}.hero-title{font-size:31px}.hero-sub{font-size:23px}.hero-at{font-size:17px}.details{gap:5px}.pill{font-size:11px;padding:6px 8px}.card{margin-top:10px}.section-title{font-size:20px;padding:10px 12px}.form-body,.payment-body{padding:11px 10px}.table-wrap{overflow:hidden}table{font-size:12px}th{font-size:11px;line-height:1.15;padding:7px 2px}td{height:43px;font-size:12px;padding:3px 2px}.no{width:9%}.delicacy{width:35%}.discount{width:23%}.quantity{width:21%}.total{width:12%}.no span{width:24px;height:24px;font-size:12px}.food-name{white-space:normal;text-align:left;padding-left:5px;font-weight:700}.discount-price{font-size:12px}.qty-control{gap:2px}.qty-btn{width:25px;height:25px;line-height:25px;font-size:18px}.qty-value{width:31px;height:27px;font-size:14px}.amount{font-size:12px}.grand-label{font-size:13px;padding-right:5px!important}.grand-total{font-size:16px}.upi-box{flex-direction:column;gap:4px;text-align:center;padding:10px}.upi-logo{width:125px;height:55px}.upi-text{font-size:15px}.flash-box{margin:10px 6px 0;font-size:14px;padding:9px 8px}.submit{font-size:20px;padding:12px}.footer{font-size:14px}.whatsapp-note{font-size:12px;line-height:1.45}.modal-message{font-size:15px}.modal-card{padding:22px 16px 18px}}
 </style>
 </head>
 <body>
@@ -40,18 +41,30 @@ tfoot td{height:48px;background:#eff8e7;font-weight:800}.grand-label{text-align:
 <div><label for="mobile">Mobile Number <span class="required">*</span></label><input id="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10 digit mobile number" required></div>
 </div></div></section>
 
-<section class="card food"><div class="section-title">🍴 &nbsp;Select your Food</div><div class="table-wrap"><table>
+<section class="card food"><div class="flash-box">Pre-book &amp; Save 10%+ on your food!</div><div class="section-title">🍴 &nbsp;Select your Food</div><div class="table-wrap"><table>
 <thead><tr><th class="no">No.</th><th class="delicacy">Delicacy</th><th class="discount">Pre Booking<br>Discounted Price (₹)</th><th class="quantity">Quantity</th><th class="total">Total (₹)</th></tr></thead>
 <tbody id="foodRows"></tbody>
 <tfoot><tr><td colspan="3"></td><td class="grand-label">Grand Total (₹)</td><td id="grandTotal" class="grand-total">0</td></tr></tfoot>
 </table></div></section>
 
-<section class="card payment"><div class="section-title">💳 &nbsp;UPI Payment</div><div class="payment-body"><div class="payment-grid">
-<div class="upi-box"><img class="upi-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI"><div class="upi-text"><div class="payto">UPI Prepayment to</div><div><span class="person">Neha</span><span class="number">9962506977</span></div><div><span class="person">Shobha</span><span class="number">9800373577</span></div></div></div>
-<div><label for="paymentAmount">Payment Amount (₹)</label><input id="paymentAmount" class="amount-display" value="0" readonly></div>
-</div><div class="whatsapp-note">Share Payment Screenshot to this WhatsApp Group Link by mentioning your flat number - <a href="https://chat.whatsapp.com/Finve14fLB0Bpzk6Uoxi2L" target="_blank" rel="noopener">WhatsApp Group</a></div></div></section>
+
 
 <button class="submit" onclick="placeOrder()">✓ &nbsp; Place Order</button>
+
+<div id="paymentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+  <div class="modal-card">
+    <div class="modal-icon">₹</div>
+    <div id="paymentTitle" class="modal-title">UPI Payment</div>
+    <div class="modal-message">Please complete the UPI payment using either of the numbers below.</div>
+    <div class="modal-order-details">
+      <div><strong>Neha</strong> — <strong>9962506977</strong></div>
+      <div><strong>Shobha</strong> — <strong>9800373577</strong></div>
+      <div class="modal-total" style="margin-top:8px">Payment Amount: ₹<span id="modalPaymentAmount">0</span></div>
+    </div>
+    <div class="modal-message">Once UPI payment is done, click <strong>OK</strong> to generate your order confirmation number.</div>
+    <button type="button" class="modal-close" onclick="confirmPaymentAndSubmit()">OK</button>
+  </div>
+</div>
 
 <div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
   <div class="modal-card">
@@ -59,9 +72,9 @@ tfoot td{height:48px;background:#eff8e7;font-weight:800}.grand-label{text-align:
     <div class="modal-title">Order Confirmation</div>
     <div id="modalOrderDetails" class="modal-order-details"></div>
     <div class="modal-message">Confirmed Payment will generate food token for collection on 19th Sep 2026 @ TFSA - open grounds</div>
+    <div class="modal-message" style="margin-top:12px">Share Payment Screenshot to <strong>Ghar Ka Khana WhatsApp Group</strong> by mentioning your flat number and order number, here is the <a href="https://chat.whatsapp.com/Finve14fLB0Bpzk6Uoxi2L" target="_blank" rel="noopener">WhatsApp Group Link</a>.</div>
     <button type="button" class="modal-close" onclick="closeConfirmModal()">OK</button>
   </div>
-</div>
 </div>
 
 <script>
@@ -72,7 +85,7 @@ const rows=document.getElementById('foodRows');
 foods.forEach((f,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="no"><span>${i+1}</span></td><td class="food-name">${f[0]}</td><td class="discount-price">₹ ${f[1]}/-</td><td><div class="qty-control"><button type="button" class="qty-btn" aria-label="Decrease ${f[0]}" onclick="changeQty(${i},-1)">−</button><span class="qty-value" id="q${i}">0</span><button type="button" class="qty-btn" aria-label="Increase ${f[0]}" onclick="changeQty(${i},1)">+</button></div></td><td class="amount" id="a${i}">0</td>`;rows.appendChild(tr);});
 const qty=Array(foods.length).fill(0);
 function changeQty(i,delta){qty[i]=Math.max(0,Math.min(30,qty[i]+delta));document.getElementById('q'+i).textContent=qty[i];updateTotals();}
-function updateTotals(){let grand=0;foods.forEach((f,i)=>{const total=qty[i]*f[1];document.getElementById('a'+i).textContent=total;grand+=total;});document.getElementById('grandTotal').textContent=grand;document.getElementById('paymentAmount').value=grand;}
+function updateTotals(){let grand=0;foods.forEach((f,i)=>{const total=qty[i]*f[1];document.getElementById('a'+i).textContent=total;grand+=total;});document.getElementById('grandTotal').textContent=grand;}
 const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycby42Bp-TdmlnVCA42vt_LPrUfNLv0Lrbjn2c0C1KxjDExiWQVK44bCk6FlYPGUdrnn4gg/exec';
 let orderSubmitting=false;
 function placeOrder(){
@@ -83,7 +96,15 @@ function placeOrder(){
   if(grand<=0){alert('Please select at least one food item.');return;}
   const items=[];
   foods.forEach((f,i)=>{if(qty[i]>0)items.push({name:f[0],quantity:qty[i],price:f[1],total:qty[i]*f[1]});});
-  const data={flatNumber:flat,name:name,mobile:mobile,grandTotal:grand,items:items};
+  window.pendingGKHOrder={flatNumber:flat,name:name,mobile:mobile,grandTotal:grand,items:items};
+  document.getElementById('modalPaymentAmount').textContent=grand;
+  document.getElementById('paymentModal').classList.add('show');
+}
+function confirmPaymentAndSubmit(){
+  if(orderSubmitting)return;
+  const data=window.pendingGKHOrder;
+  if(!data){closePaymentModal();return;}
+  document.getElementById('paymentModal').classList.remove('show');
   orderSubmitting=true;
   const btn=document.querySelector('.submit');btn.disabled=true;btn.textContent='Submitting Order...';
   const callbackName='gkhCallback_'+Date.now();
@@ -91,12 +112,14 @@ function placeOrder(){
   let finished=false;
   const cleanup=()=>{finished=true;orderSubmitting=false;btn.disabled=false;btn.innerHTML='✓ &nbsp; Place Order';if(script.parentNode)script.parentNode.removeChild(script);try{delete window[callbackName];}catch(e){window[callbackName]=undefined;}};
   const timer=setTimeout(()=>{if(finished)return;cleanup();alert('Unable to confirm the order right now. Please check your internet connection and try again.');},15000);
-  window[callbackName]=function(result){if(finished)return;clearTimeout(timer);cleanup();if(!result||!result.success){alert('Order could not be saved. Please try again.');return;}const orderNo=result.orderNumber;document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+name+'!</div><div class="modal-total">Total: ₹'+grand+'</div><div>Please keep this order number for reference.</div>';document.getElementById('confirmModal').classList.add('show');};
+  window[callbackName]=function(result){if(finished)return;clearTimeout(timer);cleanup();if(!result||!result.success){alert('Order could not be saved. Please try again.');return;}const orderNo=result.orderNumber;document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+data.name+'!</div><div class="modal-total">Total: ₹'+data.grandTotal+'</div>';document.getElementById('confirmModal').classList.add('show');window.pendingGKHOrder=null;};
   script.onerror=function(){clearTimeout(timer);if(finished)return;cleanup();alert('Unable to connect to the order system. Please try again.');};
   script.src=GOOGLE_SCRIPT_URL+'?callback='+encodeURIComponent(callbackName)+'&data='+encodeURIComponent(JSON.stringify(data));
   document.body.appendChild(script);
 }
+function closePaymentModal(){document.getElementById('paymentModal').classList.remove('show');}
 function closeConfirmModal(){document.getElementById('confirmModal').classList.remove('show');}
+document.getElementById('paymentModal').addEventListener('click',function(e){if(e.target===this)closePaymentModal();});
 document.getElementById('confirmModal').addEventListener('click',function(e){if(e.target===this)closeConfirmModal();});
 updateTotals();
 </script>
