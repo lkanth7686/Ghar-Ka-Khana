@@ -71,8 +71,8 @@ tfoot td{height:48px;background:#eff8e7;font-weight:800}.grand-label{text-align:
     <div id="confirmTitle" class="modal-icon">✓</div>
     <div class="modal-title">Order Confirmation</div>
     <div id="modalOrderDetails" class="modal-order-details"></div>
-    <div class="modal-message">Confirmed Payment will generate food token for collection on 19th Sep 2026 @ TFSA - open grounds</div>
-    <div class="modal-message" style="margin-top:12px">Share Payment Screenshot to <strong>Ghar Ka Khana WhatsApp Group</strong> by mentioning your flat number and order number, here is the <a href="https://chat.whatsapp.com/Finve14fLB0Bpzk6Uoxi2L" target="_blank" rel="noopener">WhatsApp Group Link</a>.</div>
+    <div class="modal-message">Share your payment screenshot to the <strong>Ghar Ka Khana WhatsApp Group</strong>. Mention your flat number and order number. <a href="https://chat.whatsapp.com/Finve14fLB0Bpzk6Uoxi2L" target="_blank" rel="noopener">WhatsApp Group Link</a></div>
+    <div class="modal-message" style="margin-top:12px"><strong>Confirmed payment will generate your food token for collection on 19th Sep 2026 @ TFSA - Open Grounds.</strong></div>
     <button type="button" class="modal-close" onclick="closeConfirmModal()">OK</button>
   </div>
 </div>
@@ -112,10 +112,17 @@ function confirmPaymentAndSubmit(){
   let finished=false;
   const cleanup=()=>{finished=true;orderSubmitting=false;btn.disabled=false;btn.innerHTML='✓ &nbsp; Place Order';if(script.parentNode)script.parentNode.removeChild(script);try{delete window[callbackName];}catch(e){window[callbackName]=undefined;}};
   const timer=setTimeout(()=>{if(finished)return;cleanup();alert('Unable to confirm the order right now. Please check your internet connection and try again.');},15000);
-  window[callbackName]=function(result){if(finished)return;clearTimeout(timer);cleanup();if(!result||!result.success){alert('Order could not be saved. Please try again.');return;}const orderNo=result.orderNumber;document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+data.name+'!</div><div class="modal-total">Total: ₹'+data.grandTotal+'</div>';document.getElementById('confirmModal').classList.add('show');window.pendingGKHOrder=null;};
+  window[callbackName]=function(result){if(finished)return;clearTimeout(timer);cleanup();if(!result||!result.success){alert('Order could not be saved. Please try again.');return;}const orderNo=result.orderNumber;document.getElementById('modalOrderDetails').innerHTML='<div>Order placed successfully!</div><div class="modal-order-no">'+orderNo+'</div><div>Thank you, '+data.name+'!</div><div class="modal-total">Total: ₹'+data.grandTotal+'</div>';document.getElementById('confirmModal').classList.add('show');window.pendingGKHOrder=null;resetOrderForm();};
   script.onerror=function(){clearTimeout(timer);if(finished)return;cleanup();alert('Unable to connect to the order system. Please try again.');};
   script.src=GOOGLE_SCRIPT_URL+'?callback='+encodeURIComponent(callbackName)+'&data='+encodeURIComponent(JSON.stringify(data));
   document.body.appendChild(script);
+}
+function resetOrderForm(){
+  document.getElementById('flat').value='';
+  document.getElementById('name').value='';
+  document.getElementById('mobile').value='';
+  for(let i=0;i<qty.length;i++){qty[i]=0;document.getElementById('q'+i).textContent='0';}
+  updateTotals();
 }
 function closePaymentModal(){document.getElementById('paymentModal').classList.remove('show');}
 function closeConfirmModal(){document.getElementById('confirmModal').classList.remove('show');}
