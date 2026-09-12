@@ -3,48 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ghar Ka Khana | Ganesha Cultural Event</title>
+<title>Ghar Ka Khana | Ganesha Cultural Event @ TFSA</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff8e8;color:#234b2b}
-.container{max-width:760px;margin:auto;padding:16px}
-.card{background:#fffdf6;border-radius:18px;box-shadow:0 5px 20px #00000018;overflow:hidden;margin-bottom:16px}
-.hero{padding:18px 18px 20px;text-align:center;background:linear-gradient(#fff7df,#fffdf6);border-bottom:4px solid #8d1738}
-.logo{font-weight:800;font-size:27px;letter-spacing:.5px;color:#234b2b}
-.logo span{display:block;font-size:13px;letter-spacing:2px;margin-top:3px}
-h1{margin:8px 0 5px;font-family:Georgia,serif;font-size:34px;color:#8d1738}
-.subtitle{font-weight:700;font-size:17px}
-.details{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
-.pill{background:#f3e5bd;padding:9px 12px;border-radius:20px;font-weight:700;font-size:14px}
-.intro{padding:18px;text-align:center;line-height:1.5}
-.section-title{padding:14px 18px;background:#246b38;color:white;font-size:21px;font-weight:800}
-.menu{padding:8px 14px}
-.item{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid #eadfca}
-.item:last-child{border-bottom:0}
-.item-name{font-weight:700;color:#315b35}
-.price{font-weight:700;color:#8d1738;white-space:nowrap}
-.qty{display:flex;align-items:center;gap:8px}
-.qty button{width:34px;height:34px;border:0;border-radius:50%;background:#246b38;color:white;font-size:20px;cursor:pointer}
-.qty input{width:38px;text-align:center;border:1px solid #d7c8a8;border-radius:7px;padding:7px;font-weight:700;background:white}
+body{margin:0;background:#fff8e8;color:#234b2b;font-family:Arial,Helvetica,sans-serif}
+.container{max-width:1100px;margin:auto;padding:14px}
+.card{background:#fffdf6;border-radius:18px;box-shadow:0 5px 20px rgba(0,0,0,.12);overflow:hidden;margin-bottom:16px;border:1px solid #eadfca}
+.hero{text-align:center;padding:16px;background:linear-gradient(#fff8df,#fffdf6);border-bottom:4px solid #8d1738}
+.logo{width:125px;height:95px;object-fit:contain;display:block;margin:0 auto 4px}
+h1{font-family:Georgia,serif;color:#8d1738;font-size:32px;margin:4px 0}
+.subtitle{font-size:18px;font-weight:700}
+.details{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
+.pill{background:#f3e5bd;border-radius:22px;padding:8px 12px;font-weight:700;font-size:14px}
+.intro{padding:17px;text-align:center;line-height:1.5}
+.section-title{font-size:21px;font-weight:800;padding:13px 17px;color:white;background:#246b38}
 .form{padding:18px}
-label{display:block;font-weight:700;margin:12px 0 6px}
-input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a8;border-radius:9px;font-size:16px}
-.summary{padding:18px;background:#fff4d8}
-.summary-row{display:flex;justify-content:space-between;padding:7px 0}
-.total{font-size:22px;font-weight:800;border-top:2px solid #d1bd8e;margin-top:8px;padding-top:12px;color:#8d1738}
-.payment{padding:18px}
-.upi{background:#f7ead0;border-radius:12px;padding:14px;margin:10px 0}
-.upi strong{color:#8d1738}
-.qr{display:block;max-width:180px;width:60%;margin:14px auto;border-radius:10px}
-.note{font-size:13px;color:#665f50;line-height:1.45}
-.submit{width:100%;padding:15px;border:0;border-radius:11px;background:#8d1738;color:white;font-size:18px;font-weight:800;cursor:pointer;margin-top:16px}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+label{display:block;font-weight:700;margin-bottom:6px}
+input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a8;border-radius:9px;font-size:16px;background:white}
+.table-wrap{overflow-x:auto;padding:10px 12px 14px}
+table{width:100%;border-collapse:collapse;min-width:850px;background:#fff}
+th{background:#246b38;color:#fff;padding:11px 8px;font-size:15px;border:1px solid #d8cdb8}
+td{border:1px solid #e1d7c6;padding:7px 6px;text-align:center;height:65px}
+td.no{width:44px;font-weight:800;background:#f5ecd6}
+.food-cell{text-align:left;min-width:180px}
+.food-name{font-weight:700;color:#315b35}
+.pic-cell{width:105px}
+.pic-cell img{width:82px;height:50px;object-fit:cover;border-radius:7px;display:block;margin:auto}
+.price{font-weight:700;white-space:nowrap}
+.regular{color:#333}
+.discount{color:#8d1738;font-size:16px}
+.qty-cell{white-space:nowrap}
+.qty-btn{width:32px;height:32px;border:0;border-radius:50%;background:#246b38;color:#fff;font-size:19px;cursor:pointer;vertical-align:middle}
+.qty-cell input{width:42px;padding:7px 3px;text-align:center;border:1px solid #d7c8a8;border-radius:7px;margin:0 4px;font-weight:700}
+.amount{font-weight:800;white-space:nowrap}
+tfoot td{background:#eef5df;font-weight:800}
+.grand-label{text-align:right!important;font-size:18px;color:#234b2b}
+.grand-total{font-size:21px;color:#8d1738}
+.payment{padding-bottom:18px}
+.payment-body{padding:18px}
+.upi-box{background:#f7ead0;border-radius:12px;padding:14px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:17px}
+.upi-box strong{color:#8d1738}
+.note{font-size:13px;color:#665f50;text-align:center;margin:13px 0 0}
+.submit{display:block;width:calc(100% - 36px);margin:0 18px 18px;padding:15px;border:0;border-radius:11px;background:#8d1738;color:white;font-size:18px;font-weight:800;cursor:pointer}
 .success{display:none;text-align:center;padding:28px}
 .order-no{font-size:34px;color:#8d1738;font-weight:900;margin:12px}
 .small{font-size:13px;color:#665f50}
-@media(max-width:560px){
- .item{grid-template-columns:1fr auto;gap:7px}
- .price{grid-column:1/2}.qty{grid-column:2/3;grid-row:1/3}
- h1{font-size:29px}
+@media(max-width:700px){
+ .container{padding:8px}
+ .form-grid{grid-template-columns:1fr}
+ h1{font-size:27px}
+ .logo{width:105px;height:80px}
+ .table-wrap{padding:8px}
 }
 </style>
 </head>
@@ -52,7 +62,7 @@ input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a
 <div class="container">
 
 <div class="card hero">
-  <div class="logo">GHAR KA KHANA<span>DESIGN 3</span></div>
+  <img class="logo" src="logo.png" alt="Ghar Ka Khana logo">
   <h1>Ganesha Cultural Event @ TFSA</h1>
   <div class="details">
     <div class="pill">📅 19th September 2026</div>
@@ -64,42 +74,298 @@ input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a
 <div class="card intro">
   <b>🍽️ Pre-Booking Food Orders</b><br>
   Place your order in advance, select the quantity you need, and see the
-  <b>item-wise price and total amount instantly</b> before submitting your order.<br><br>
+  <b>item-wise total and Grand Total instantly</b> before submitting your order.<br>
   <b>Pre-booking discounted prices</b> are applicable for orders placed through this page.
 </div>
 
 <div id="orderForm">
-<div class="card">
-  <div class="section-title">🍴 Select Your Food</div>
-  <div class="menu" id="menu"></div>
-</div>
-
 <div class="card form">
-  <div class="section-title" style="margin:-18px -18px 15px">👤 Resident Details</div>
-  <label>Flat Number *</label>
-  <input id="flat" type="text" placeholder="e.g. A-101">
-  <label>Resident Name *</label>
-  <input id="name" type="text" placeholder="Enter your name">
-  <label>Mobile Number *</label>
-  <input id="mobile" type="tel" placeholder="Enter mobile number">
+  <div class="section-title" style="margin:-18px -18px 16px">👤 Resident Details</div>
+  <div class="form-grid">
+    <div><label>Flat Number *</label><input id="flat" type="text" placeholder="e.g. A-101"></div>
+    <div><label>Resident Name *</label><input id="name" type="text" placeholder="Enter your name"></div>
+    <div><label>Mobile Number *</label><input id="mobile" type="tel" placeholder="Enter mobile number"></div>
+  </div>
 </div>
 
-<div class="card summary">
-  <div class="section-title" style="margin:-18px -18px 10px">🧾 Order Summary</div>
-  <div id="summaryRows"><div class="small">Select items above to see your order summary.</div></div>
-  <div class="summary-row total"><span>Grand Total</span><span id="grandTotal">₹0</span></div>
+<div class="card">
+  <div class="section-title">🍴 Select your Food</div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th>No.</th><th>Delicacy</th><th>Picture</th><th>Regular Price</th>
+      <th>Pre Booking<br>Discounted Price</th><th>Quantity</th><th>Total</th>
+    </tr></thead>
+    <tbody><tr>
+      <td class="no">1</td>
+      <td class="food-cell"><div class="food-name">Pizza</div></td>
+      <td class="pic-cell"><img src="food/01-pizza.jpg" alt="Pizza"></td>
+      <td class="price regular">₹220/-</td>
+      <td class="price discount">₹200/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(0,-1)">−</button>
+        <input id="q0" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(0,1)">+</button>
+      </td>
+      <td class="amount" id="a0">₹0</td>
+    </tr><tr>
+      <td class="no">2</td>
+      <td class="food-cell"><div class="food-name">Ghee Jalebi (200 gms)</div></td>
+      <td class="pic-cell"><img src="food/02-ghee-jalebi.jpg" alt="Ghee Jalebi (200 gms)"></td>
+      <td class="price regular">₹220/-</td>
+      <td class="price discount">₹200/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(1,-1)">−</button>
+        <input id="q1" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(1,1)">+</button>
+      </td>
+      <td class="amount" id="a1">₹0</td>
+    </tr><tr>
+      <td class="no">3</td>
+      <td class="food-cell"><div class="food-name">Chola Bhatura</div></td>
+      <td class="pic-cell"><img src="food/03-chola-bhatura.jpg" alt="Chola Bhatura"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(2,-1)">−</button>
+        <input id="q2" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(2,1)">+</button>
+      </td>
+      <td class="amount" id="a2">₹0</td>
+    </tr><tr>
+      <td class="no">4</td>
+      <td class="food-cell"><div class="food-name">Pav Bhaji</div></td>
+      <td class="pic-cell"><img src="food/04-pav-bhaji.jpg" alt="Pav Bhaji"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(3,-1)">−</button>
+        <input id="q3" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(3,1)">+</button>
+      </td>
+      <td class="amount" id="a3">₹0</td>
+    </tr><tr>
+      <td class="no">5</td>
+      <td class="food-cell"><div class="food-name">Tava Pulao</div></td>
+      <td class="pic-cell"><img src="food/05-tava-pulao.jpg" alt="Tava Pulao"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(4,-1)">−</button>
+        <input id="q4" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(4,1)">+</button>
+      </td>
+      <td class="amount" id="a4">₹0</td>
+    </tr><tr>
+      <td class="no">6</td>
+      <td class="food-cell"><div class="food-name">Fried Rice</div></td>
+      <td class="pic-cell"><img src="food/06-fried-rice.jpg" alt="Fried Rice"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(5,-1)">−</button>
+        <input id="q5" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(5,1)">+</button>
+      </td>
+      <td class="amount" id="a5">₹0</td>
+    </tr><tr>
+      <td class="no">7</td>
+      <td class="food-cell"><div class="food-name">Noodles</div></td>
+      <td class="pic-cell"><img src="food/07-noodles.jpg" alt="Noodles"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(6,-1)">−</button>
+        <input id="q6" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(6,1)">+</button>
+      </td>
+      <td class="amount" id="a6">₹0</td>
+    </tr><tr>
+      <td class="no">8</td>
+      <td class="food-cell"><div class="food-name">Punjabi Parantha</div></td>
+      <td class="pic-cell"><img src="food/08-punjabi-parantha.jpg" alt="Punjabi Parantha"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(7,-1)">−</button>
+        <input id="q7" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(7,1)">+</button>
+      </td>
+      <td class="amount" id="a7">₹0</td>
+    </tr><tr>
+      <td class="no">9</td>
+      <td class="food-cell"><div class="food-name">Dahi Bhalla</div></td>
+      <td class="pic-cell"><img src="food/09-dahi-bhalla.jpg" alt="Dahi Bhalla"></td>
+      <td class="price regular">₹120/-</td>
+      <td class="price discount">₹100/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(8,-1)">−</button>
+        <input id="q8" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(8,1)">+</button>
+      </td>
+      <td class="amount" id="a8">₹0</td>
+    </tr><tr>
+      <td class="no">10</td>
+      <td class="food-cell"><div class="food-name">Badam Milk</div></td>
+      <td class="pic-cell"><img src="food/10-badam-milk.jpg" alt="Badam Milk"></td>
+      <td class="price regular">₹110/-</td>
+      <td class="price discount">₹100/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(9,-1)">−</button>
+        <input id="q9" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(9,1)">+</button>
+      </td>
+      <td class="amount" id="a9">₹0</td>
+    </tr><tr>
+      <td class="no">11</td>
+      <td class="food-cell"><div class="food-name">Idli Fried</div></td>
+      <td class="pic-cell"><img src="food/11-idli-fried.jpg" alt="Idli Fried"></td>
+      <td class="price regular">₹110/-</td>
+      <td class="price discount">₹100/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(10,-1)">−</button>
+        <input id="q10" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(10,1)">+</button>
+      </td>
+      <td class="amount" id="a10">₹0</td>
+    </tr><tr>
+      <td class="no">12</td>
+      <td class="food-cell"><div class="food-name">Khaman Dhokla (4 pcs)</div></td>
+      <td class="pic-cell"><img src="food/12-khaman-dhokla.jpg" alt="Khaman Dhokla (4 pcs)"></td>
+      <td class="price regular">₹110/-</td>
+      <td class="price discount">₹100/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(11,-1)">−</button>
+        <input id="q11" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(11,1)">+</button>
+      </td>
+      <td class="amount" id="a11">₹0</td>
+    </tr><tr>
+      <td class="no">13</td>
+      <td class="food-cell"><div class="food-name">Pani Puri</div></td>
+      <td class="pic-cell"><img src="food/13-pani-puri.jpg" alt="Pani Puri"></td>
+      <td class="price regular">₹90/-</td>
+      <td class="price discount">₹80/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(12,-1)">−</button>
+        <input id="q12" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(12,1)">+</button>
+      </td>
+      <td class="amount" id="a12">₹0</td>
+    </tr><tr>
+      <td class="no">14</td>
+      <td class="food-cell"><div class="food-name">Bombay Bhel</div></td>
+      <td class="pic-cell"><img src="food/14-bombay-bhel.jpg" alt="Bombay Bhel"></td>
+      <td class="price regular">₹90/-</td>
+      <td class="price discount">₹80/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(13,-1)">−</button>
+        <input id="q13" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(13,1)">+</button>
+      </td>
+      <td class="amount" id="a13">₹0</td>
+    </tr><tr>
+      <td class="no">15</td>
+      <td class="food-cell"><div class="food-name">Kachori</div></td>
+      <td class="pic-cell"><img src="food/15-kachori.jpg" alt="Kachori"></td>
+      <td class="price regular">₹55/-</td>
+      <td class="price discount">₹50/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(14,-1)">−</button>
+        <input id="q14" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(14,1)">+</button>
+      </td>
+      <td class="amount" id="a14">₹0</td>
+    </tr><tr>
+      <td class="no">16</td>
+      <td class="food-cell"><div class="food-name">Samosa</div></td>
+      <td class="pic-cell"><img src="food/16-samosa.jpg" alt="Samosa"></td>
+      <td class="price regular">₹55/-</td>
+      <td class="price discount">₹50/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(15,-1)">−</button>
+        <input id="q15" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(15,1)">+</button>
+      </td>
+      <td class="amount" id="a15">₹0</td>
+    </tr><tr>
+      <td class="no">17</td>
+      <td class="food-cell"><div class="food-name">Gulab Jamun</div></td>
+      <td class="pic-cell"><img src="food/17-gulab-jamun.jpg" alt="Gulab Jamun"></td>
+      <td class="price regular">₹55/-</td>
+      <td class="price discount">₹50/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(16,-1)">−</button>
+        <input id="q16" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(16,1)">+</button>
+      </td>
+      <td class="amount" id="a16">₹0</td>
+    </tr><tr>
+      <td class="no">18</td>
+      <td class="food-cell"><div class="food-name">Dosa Masala</div></td>
+      <td class="pic-cell"><img src="food/18-dosa-masala.jpg" alt="Dosa Masala"></td>
+      <td class="price regular">₹130/-</td>
+      <td class="price discount">₹120/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(17,-1)">−</button>
+        <input id="q17" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(17,1)">+</button>
+      </td>
+      <td class="amount" id="a17">₹0</td>
+    </tr><tr>
+      <td class="no">19</td>
+      <td class="food-cell"><div class="food-name">Mojito</div></td>
+      <td class="pic-cell"><img src="food/19-mojito.jpg" alt="Mojito"></td>
+      <td class="price regular">₹170/-</td>
+      <td class="price discount">₹150/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(18,-1)">−</button>
+        <input id="q18" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(18,1)">+</button>
+      </td>
+      <td class="amount" id="a18">₹0</td>
+    </tr><tr>
+      <td class="no">20</td>
+      <td class="food-cell"><div class="food-name">Lemonade</div></td>
+      <td class="pic-cell"><img src="food/20-lemonade.jpg" alt="Lemonade"></td>
+      <td class="price regular">₹90/-</td>
+      <td class="price discount">₹80/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(19,-1)">−</button>
+        <input id="q19" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(19,1)">+</button>
+      </td>
+      <td class="amount" id="a19">₹0</td>
+    </tr><tr>
+      <td class="no">21</td>
+      <td class="food-cell"><div class="food-name">Coconut Punch</div></td>
+      <td class="pic-cell"><img src="food/21-coconut-punch.jpg" alt="Coconut Punch"></td>
+      <td class="price regular">₹140/-</td>
+      <td class="price discount">₹120/-</td>
+      <td class="qty-cell">
+        <button class="qty-btn" onclick="changeQty(20,-1)">−</button>
+        <input id="q20" type="number" min="0" value="0" onchange="update()">
+        <button class="qty-btn" onclick="changeQty(20,1)">+</button>
+      </td>
+      <td class="amount" id="a20">₹0</td>
+    </tr></tbody>
+    <tfoot><tr>
+      <td colspan="6" class="grand-label">Grand Total</td>
+      <td class="grand-total" id="grandTotal">₹0</td>
+    </tr></tfoot>
+  </table>
+  </div>
 </div>
 
 <div class="card payment">
-  <div class="section-title" style="margin:-18px -18px 15px">💳 UPI Payment</div>
-  <p><b>Please pay the Grand Total using UPI to either:</b></p>
-  <div class="upi">Neha: <strong>9962506977</strong></div>
-  <div class="upi">Shobha: <strong>9800373577</strong></div>
-  <p style="text-align:center"><b>📷 Scan the QR code to pay</b></p>
-  <img class="qr" src="qr-code.jpg" alt="UPI QR Code">
-  <label>UPI Transaction ID / UTR *</label>
-  <input id="utr" type="text" placeholder="Enter transaction ID / UTR">
-  <p class="note">After making the payment, enter your UTR above. In the production version, a payment screenshot upload can also be enabled.</p>
+  <div class="section-title">💳 UPI Payment</div>
+  <div class="payment-body">
+    <div class="upi-box">
+      <div>Neha: <strong>9962506977</strong></div>
+      <div>Shobha: <strong>9800373577</strong></div>
+    </div>
+    <p class="note">Please make the UPI payment for the Grand Total using either of the above numbers.</p>
+  </div>
   <button class="submit" onclick="placeOrder()">✅ Place Order</button>
 </div>
 </div>
@@ -114,52 +380,51 @@ input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a
 </div>
 
 </div>
-
 <script>
-const items = [
-["Pizza",200],["Ghee Jalebi (200 gms)",200],["Chola Bhatura",150],
-["Pav Bhaji",150],["Tava Pulao",150],["Fried Rice",150],["Noodles",150],
-["Punjabi Parantha",150],["Dahi Bhalla",100],["Badam Milk",100],
-["Idli Fried",100],["Khaman Dhokla (4 pcs)",100],["Pani Puri",80],
-["Bombay Bhel",80],["Kachori",50],["Samosa",50],["Gulab Jamun",50],
-["Dosa Masala",120],["Mojito",150],["Lemonade",80],["Coconut Punch",120]
+const items=[
+["Pizza",220,200],
+["Ghee Jalebi (200 gms)",220,200],
+["Chola Bhatura",170,150],
+["Pav Bhaji",170,150],
+["Tava Pulao",170,150],
+["Fried Rice",170,150],
+["Noodles",170,150],
+["Punjabi Parantha",170,150],
+["Dahi Bhalla",120,100],
+["Badam Milk",110,100],
+["Idli Fried",110,100],
+["Khaman Dhokla (4 pcs)",110,100],
+["Pani Puri",90,80],
+["Bombay Bhel",90,80],
+["Kachori",55,50],
+["Samosa",55,50],
+["Gulab Jamun",55,50],
+["Dosa Masala",130,120],
+["Mojito",170,150],
+["Lemonade",90,80],
+["Coconut Punch",140,120]
 ];
-
-const menu=document.getElementById("menu");
-items.forEach((it,i)=>{
-  menu.insertAdjacentHTML("beforeend",`
-    <div class="item">
-      <div class="item-name">${i+1}. ${it[0]}</div>
-      <div class="price">₹${it[1]}</div>
-      <div class="qty">
-        <button onclick="changeQty(${i},-1)">−</button>
-        <input id="q${i}" value="0" min="0" type="number" onchange="update()">
-        <button onclick="changeQty(${i},1)">+</button>
-      </div>
-    </div>`);
-});
-
 function changeQty(i,d){
  const el=document.getElementById("q"+i);
  el.value=Math.max(0,(parseInt(el.value)||0)+d);
  update();
 }
 function update(){
- let total=0, html="";
+ let grand=0;
  items.forEach((it,i)=>{
-   let q=Math.max(0,parseInt(document.getElementById("q"+i).value)||0);
-   if(q){let a=q*it[1];total+=a;html+=`<div class="summary-row"><span>${it[0]} × ${q}</span><b>₹${a}</b></div>`;}
+   const q=Math.max(0,parseInt(document.getElementById("q"+i).value)||0);
+   const amount=q*it[2];
+   grand+=amount;
+   document.getElementById("a"+i).textContent="₹"+amount;
  });
- document.getElementById("summaryRows").innerHTML=html||'<div class="small">Select items above to see your order summary.</div>';
- document.getElementById("grandTotal").textContent="₹"+total;
+ document.getElementById("grandTotal").textContent="₹"+grand;
 }
 function placeOrder(){
- let selected=items.some((it,i)=>(parseInt(document.getElementById("q"+i).value)||0)>0);
+ const selected=items.some((it,i)=>(parseInt(document.getElementById("q"+i).value)||0)>0);
  if(!selected){alert("Please select at least one food item.");return;}
  if(!document.getElementById("flat").value.trim()||!document.getElementById("name").value.trim()||!document.getElementById("mobile").value.trim()){
    alert("Please complete Flat Number, Resident Name and Mobile Number.");return;
  }
- if(!document.getElementById("utr").value.trim()){alert("Please enter your UPI Transaction ID / UTR.");return;}
  const total=document.getElementById("grandTotal").textContent;
  const n=String(Number(localStorage.getItem("gkhOrderNo")||0)+1).padStart(3,"0");
  localStorage.setItem("gkhOrderNo",Number(n));
