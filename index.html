@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghar Ka Khana | Ganesha Cultural Event</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff8e8;color:#234b2b}
+.container{max-width:760px;margin:auto;padding:16px}
+.card{background:#fffdf6;border-radius:18px;box-shadow:0 5px 20px #00000018;overflow:hidden;margin-bottom:16px}
+.hero{padding:18px 18px 20px;text-align:center;background:linear-gradient(#fff7df,#fffdf6);border-bottom:4px solid #8d1738}
+.logo{font-weight:800;font-size:27px;letter-spacing:.5px;color:#234b2b}
+.logo span{display:block;font-size:13px;letter-spacing:2px;margin-top:3px}
+h1{margin:8px 0 5px;font-family:Georgia,serif;font-size:34px;color:#8d1738}
+.subtitle{font-weight:700;font-size:17px}
+.details{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pill{background:#f3e5bd;padding:9px 12px;border-radius:20px;font-weight:700;font-size:14px}
+.intro{padding:18px;text-align:center;line-height:1.5}
+.section-title{padding:14px 18px;background:#246b38;color:white;font-size:21px;font-weight:800}
+.menu{padding:8px 14px}
+.item{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid #eadfca}
+.item:last-child{border-bottom:0}
+.item-name{font-weight:700;color:#315b35}
+.price{font-weight:700;color:#8d1738;white-space:nowrap}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:34px;height:34px;border:0;border-radius:50%;background:#246b38;color:white;font-size:20px;cursor:pointer}
+.qty input{width:38px;text-align:center;border:1px solid #d7c8a8;border-radius:7px;padding:7px;font-weight:700;background:white}
+.form{padding:18px}
+label{display:block;font-weight:700;margin:12px 0 6px}
+input[type=text],input[type=tel]{width:100%;padding:12px;border:1px solid #d7c8a8;border-radius:9px;font-size:16px}
+.summary{padding:18px;background:#fff4d8}
+.summary-row{display:flex;justify-content:space-between;padding:7px 0}
+.total{font-size:22px;font-weight:800;border-top:2px solid #d1bd8e;margin-top:8px;padding-top:12px;color:#8d1738}
+.payment{padding:18px}
+.upi{background:#f7ead0;border-radius:12px;padding:14px;margin:10px 0}
+.upi strong{color:#8d1738}
+.qr{display:block;max-width:180px;width:60%;margin:14px auto;border-radius:10px}
+.note{font-size:13px;color:#665f50;line-height:1.45}
+.submit{width:100%;padding:15px;border:0;border-radius:11px;background:#8d1738;color:white;font-size:18px;font-weight:800;cursor:pointer;margin-top:16px}
+.success{display:none;text-align:center;padding:28px}
+.order-no{font-size:34px;color:#8d1738;font-weight:900;margin:12px}
+.small{font-size:13px;color:#665f50}
+@media(max-width:560px){
+ .item{grid-template-columns:1fr auto;gap:7px}
+ .price{grid-column:1/2}.qty{grid-column:2/3;grid-row:1/3}
+ h1{font-size:29px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="card hero">
+  <div class="logo">GHAR KA KHANA<span>DESIGN 3</span></div>
+  <h1>Ganesha Cultural Event @ TFSA</h1>
+  <div class="details">
+    <div class="pill">📅 19th September 2026</div>
+    <div class="pill">⏰ 4:00 PM – 9:00 PM</div>
+    <div class="pill">📍 Open Grounds, TFSA</div>
+  </div>
+</div>
+
+<div class="card intro">
+  <b>🍽️ Pre-Booking Food Orders</b><br>
+  Place your order in advance, select the quantity you need, and see the
+  <b>item-wise price and total amount instantly</b> before submitting your order.<br><br>
+  <b>Pre-booking discounted prices</b> are applicable for orders placed through this page.
+</div>
+
+<div id="orderForm">
+<div class="card">
+  <div class="section-title">🍴 Select Your Food</div>
+  <div class="menu" id="menu"></div>
+</div>
+
+<div class="card form">
+  <div class="section-title" style="margin:-18px -18px 15px">👤 Resident Details</div>
+  <label>Flat Number *</label>
+  <input id="flat" type="text" placeholder="e.g. A-101">
+  <label>Resident Name *</label>
+  <input id="name" type="text" placeholder="Enter your name">
+  <label>Mobile Number *</label>
+  <input id="mobile" type="tel" placeholder="Enter mobile number">
+</div>
+
+<div class="card summary">
+  <div class="section-title" style="margin:-18px -18px 10px">🧾 Order Summary</div>
+  <div id="summaryRows"><div class="small">Select items above to see your order summary.</div></div>
+  <div class="summary-row total"><span>Grand Total</span><span id="grandTotal">₹0</span></div>
+</div>
+
+<div class="card payment">
+  <div class="section-title" style="margin:-18px -18px 15px">💳 UPI Payment</div>
+  <p><b>Please pay the Grand Total using UPI to either:</b></p>
+  <div class="upi">Neha: <strong>9962506977</strong></div>
+  <div class="upi">Shobha: <strong>9800373577</strong></div>
+  <p style="text-align:center"><b>📷 Scan the QR code to pay</b></p>
+  <img class="qr" src="qr-code.jpg" alt="UPI QR Code">
+  <label>UPI Transaction ID / UTR *</label>
+  <input id="utr" type="text" placeholder="Enter transaction ID / UTR">
+  <p class="note">After making the payment, enter your UTR above. In the production version, a payment screenshot upload can also be enabled.</p>
+  <button class="submit" onclick="placeOrder()">✅ Place Order</button>
+</div>
+</div>
+
+<div class="card success" id="success">
+  <div style="font-size:48px">🎉</div>
+  <h2>ORDER RECEIVED!</h2>
+  <div class="order-no" id="orderNo">GKH-001</div>
+  <div id="successTotal" style="font-size:20px;font-weight:800"></div>
+  <p>Please save your <b>Order Number</b> and show it when collecting your food.</p>
+  <p class="small">Thank you for ordering from Ghar Ka Khana ❤️</p>
+</div>
+
+</div>
+
+<script>
+const items = [
+["Pizza",200],["Ghee Jalebi (200 gms)",200],["Chola Bhatura",150],
+["Pav Bhaji",150],["Tava Pulao",150],["Fried Rice",150],["Noodles",150],
+["Punjabi Parantha",150],["Dahi Bhalla",100],["Badam Milk",100],
+["Idli Fried",100],["Khaman Dhokla (4 pcs)",100],["Pani Puri",80],
+["Bombay Bhel",80],["Kachori",50],["Samosa",50],["Gulab Jamun",50],
+["Dosa Masala",120],["Mojito",150],["Lemonade",80],["Coconut Punch",120]
+];
+
+const menu=document.getElementById("menu");
+items.forEach((it,i)=>{
+  menu.insertAdjacentHTML("beforeend",`
+    <div class="item">
+      <div class="item-name">${i+1}. ${it[0]}</div>
+      <div class="price">₹${it[1]}</div>
+      <div class="qty">
+        <button onclick="changeQty(${i},-1)">−</button>
+        <input id="q${i}" value="0" min="0" type="number" onchange="update()">
+        <button onclick="changeQty(${i},1)">+</button>
+      </div>
+    </div>`);
+});
+
+function changeQty(i,d){
+ const el=document.getElementById("q"+i);
+ el.value=Math.max(0,(parseInt(el.value)||0)+d);
+ update();
+}
+function update(){
+ let total=0, html="";
+ items.forEach((it,i)=>{
+   let q=Math.max(0,parseInt(document.getElementById("q"+i).value)||0);
+   if(q){let a=q*it[1];total+=a;html+=`<div class="summary-row"><span>${it[0]} × ${q}</span><b>₹${a}</b></div>`;}
+ });
+ document.getElementById("summaryRows").innerHTML=html||'<div class="small">Select items above to see your order summary.</div>';
+ document.getElementById("grandTotal").textContent="₹"+total;
+}
+function placeOrder(){
+ let selected=items.some((it,i)=>(parseInt(document.getElementById("q"+i).value)||0)>0);
+ if(!selected){alert("Please select at least one food item.");return;}
+ if(!document.getElementById("flat").value.trim()||!document.getElementById("name").value.trim()||!document.getElementById("mobile").value.trim()){
+   alert("Please complete Flat Number, Resident Name and Mobile Number.");return;
+ }
+ if(!document.getElementById("utr").value.trim()){alert("Please enter your UPI Transaction ID / UTR.");return;}
+ const total=document.getElementById("grandTotal").textContent;
+ const n=String(Number(localStorage.getItem("gkhOrderNo")||0)+1).padStart(3,"0");
+ localStorage.setItem("gkhOrderNo",Number(n));
+ document.getElementById("orderNo").textContent="GKH-"+n;
+ document.getElementById("successTotal").textContent="Grand Total: "+total;
+ document.getElementById("orderForm").style.display="none";
+ document.getElementById("success").style.display="block";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+</body>
+</html>
