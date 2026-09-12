@@ -71,7 +71,7 @@ const foods=[
 const rows=document.getElementById('foodRows');
 foods.forEach((f,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="no"><span>${i+1}</span></td><td class="food-name">${f[0]}</td><td class="discount-price">₹ ${f[1]}/-</td><td><div class="qty-control"><button type="button" class="qty-btn" aria-label="Decrease ${f[0]}" onclick="changeQty(${i},-1)">−</button><span class="qty-value" id="q${i}">0</span><button type="button" class="qty-btn" aria-label="Increase ${f[0]}" onclick="changeQty(${i},1)">+</button></div></td><td class="amount" id="a${i}">0</td>`;rows.appendChild(tr);});
 const qty=Array(foods.length).fill(0);
-function changeQty(i,delta){qty[i]=Math.max(0,Math.min(10,qty[i]+delta));document.getElementById('q'+i).textContent=qty[i];updateTotals();}
+function changeQty(i,delta){qty[i]=Math.max(0,Math.min(30,qty[i]+delta));document.getElementById('q'+i).textContent=qty[i];updateTotals();}
 function updateTotals(){let grand=0;foods.forEach((f,i)=>{const total=qty[i]*f[1];document.getElementById('a'+i).textContent=total;grand+=total;});document.getElementById('grandTotal').textContent=grand;document.getElementById('paymentAmount').value=grand;}
 const GOOGLE_SCRIPT_URL='https://script.google.com/macros/s/AKfycby42Bp-TdmlnVCA42vt_LPrUfNLv0Lrbjn2c0C1KxjDExiWQVK44bCk6FlYPGUdrnn4gg/exec';
 let orderSubmitting=false;
